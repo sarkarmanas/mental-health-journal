@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mental Health Journal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="shape square"></div>
+    <div class="shape triangle"></div>
+    <div class="shape spiral"></div>
+
+
+    <div class="header">
+        <h1>🌸 My Mental Health Journal</h1>
+    </div>
+
+    <div class="container">
+        <div class="form-group">
+            <label for="day">Day of the Week:</label>
+            <input type="text" id="day" placeholder="e.g., Monday">
+        </div>
+
+        <div class="form-group">
+            <label for="reflection">Your Reflection:</label>
+            <textarea id="reflection" rows="4" placeholder="Write your thoughts here..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Select Your Mood:</label>
+            <div class="emoji-picker" id="emojiPicker">
+                <span data-score="9">😄</span>
+                <span data-score="7">😊</span>
+                <span data-score="5">😐</span>
+                <span data-score="3">😟</span>
+                <span data-score="1">😠</span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="moodScore">Mood Score (Auto-filled from emoji)</label>
+            <input type="text" id="moodScore" readonly placeholder="Click emoji to select mood">
+        </div>
+
+        <div class="form-group">
+            <label>Tags:</label>
+            <div class="tags">
+                <input type="button" value="#Grateful" onclick="addTag('Grateful')">
+                <input type="button" value="#Stress" onclick="addTag('Stress')">
+                <input type="button" value="#Happy" onclick="addTag('Happy')">
+                <input type="button" value="#Anxious" onclick="addTag('Anxious')">
+            </div>
+            <div class="selected-tags" id="selectedTags"></div>
+        </div>
+
+        <canvas id="moodChart" width="400" height="150" style="margin-top: 2rem;"></canvas>
+
+        <button class="save-button" onclick="saveEntry()">Save Reflection</button>
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

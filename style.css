@@ -1,0 +1,247 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Quicksand', sans-serif;
+     background: linear-gradient(135deg, #fceef3, #e4f2f7);
+     overflow-x: hidden;
+     position: relative;
+
+ }
+
+ .header {
+     text-align: center;
+     padding: 1rem 1rem 1rem;
+     background: linear-gradient(to right, #ffd5ec, #e0f7fa);
+     border-bottom-left-radius: 2rem;
+     border-bottom-right-radius: 2rem;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+     position: relative;
+     z-index: 2;
+ }
+
+ .header h1 {
+     margin: 0;
+     letter-spacing: 2px;
+     color: #d14b8f;
+     font-size: 50px;
+     font-weight: 800;
+     font-family: 'Pacifico', cursive;
+ }
+
+ .container {
+     max-width: 700px;
+     margin: 2rem auto;
+     padding: 2rem;
+     background: linear-gradient(to right, #ffd5ec, #e0f7fa);
+     background-color: #ffd8f6;
+     border-radius: 1.5rem;
+     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+     transition: 0.3s ease;
+     z-index: 2;
+     position: relative;
+ }
+
+ .container:hover {
+     transform: scale(1.01);
+     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+ }
+
+ .form-group {
+     margin-bottom: 1.5rem;
+     display: flex;
+     flex-direction: column;
+ }
+
+ label {
+     font-weight: 600;
+     margin-bottom: 0.5rem;
+ }
+
+ input[type="text"],
+ textarea {
+     padding: 1rem;
+     border: 2px solid #f2f2f2;
+     border-radius: 1rem;
+     background: linear-gradient(to right, #fff, #f9f9f9);
+     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+     transition: all 0.3s ease;
+     font-size: 1rem;
+ }
+
+ input[type="text"]:hover,
+ textarea:hover {
+     background-color: #fff0f5;
+     border-color: #ff99cc;
+ }
+
+ input[type="text"]:focus,
+ textarea:focus {
+     outline: none;
+     border-color: #d14b8f;
+     background: #fff;
+     box-shadow: 0 0 0 3px rgba(209, 75, 143, 0.2);
+ }
+
+ .emoji-picker {
+     display: flex;
+     justify-content: center;
+     gap: 1.2rem;
+     font-size: 2rem;
+     cursor: pointer;
+     margin-top: 1rem;
+     margin-bottom: 1rem;
+ }
+
+ .emoji-picker span {
+     transition: transform 0.2s ease;
+ }
+
+ .emoji-picker span:hover {
+     transform: scale(1.3);
+ }
+
+ .tags {
+     margin-top: 1rem;
+ }
+
+ .tags input[type="button"] {
+     padding: 0.5rem 1rem;
+     margin: 0.3rem;
+     background: #fce4ec;
+     color: #d14b8f;
+     border: none;
+     border-radius: 999px;
+     cursor: pointer;
+     font-weight: bold;
+     transition: all 0.3s ease;
+ }
+
+ .tags input[type="button"]:hover {
+     background: #fad2e4;
+     transform: scale(1.1);
+ }
+
+ .selected-tags {
+     margin-top: 0.5rem;
+     font-style: italic;
+     color: #666;
+ }
+
+ .save-button {
+     margin-top: 2rem;
+     width: 100%;
+     padding: 1rem;
+     background: #d14b8f;
+     color: white;
+     font-size: 1rem;
+     font-weight: bold;
+     border: none;
+     border-radius: 1rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .save-button:hover {
+     background: #a23370;
+     transform: scale(1.02);
+ }
+
+ .blob {
+     position: absolute;
+     border-radius: 50%;
+     opacity: 0.7;
+     z-index: 1;
+     animation: float 10s infinite alternate ease-in-out;
+ }
+
+ .blob1 {
+     width: 120px;
+     height: 120px;
+     background: #ff9aa2;
+     top: 15rem;
+     left: 20px;
+ }
+
+ .blob2 {
+     width: 100px;
+     height: 100px;
+     background: #c1f0f6;
+     bottom: 100px;
+     right: 70px;
+     animation-delay: 3s;
+ }
+
+ .blob3 {
+     width: 190px;
+     height: 190px;
+     background: #ffe5b4;
+     top: 40%;
+     left: 85%;
+     animation-delay: 6s;
+ }
+
+ .shape {
+     position: absolute;
+     z-index: 1;
+     opacity: 0.6;
+     animation: float 12s infinite alternate ease-in-out;
+ }
+
+ .square {
+     width: 80px;
+     height: 80px;
+     background: #b2f7ef;
+     top: 50%;
+     left: 10%;
+     transform: rotate(15deg);
+     animation-delay: 2s;
+ }
+
+ .triangle {
+     width: 0;
+     height: 0;
+     border-left: 50px solid transparent;
+     border-right: 50px solid transparent;
+     border-bottom: 80px solid #ffb3ba;
+     top: 20%;
+     right: 5%;
+     position: absolute;
+     animation-delay: 4s;
+ }
+
+ .spiral {
+     width: 60px;
+     height: 60px;
+     border: 6px solid #caa8f5;
+     border-radius: 50%;
+     border-top-color: transparent;
+     top: 75%;
+     right: 85%;
+     animation: spin 6s linear infinite, float 10s infinite alternate ease-in-out;
+ }
+
+
+ @keyframes spin {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+
+ @keyframes float {
+     0% {
+         transform: translateY(0);
+     }
+
+     100% {
+         transform: translateY(-20px) translateX(15px);
+     }
+ }
